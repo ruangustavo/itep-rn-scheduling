@@ -360,7 +360,7 @@ func (s *Scheduler) getAvailableTimes(orderID int, dateStr string) ([]string, er
 
 	log.Printf("Times API Response for order %d, date %s: %s", orderID, dateStr, string(body))
 
-	if resp.StatusCode != http.StatusCreated {
+	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("HTTP error %d: %s", resp.StatusCode, string(body))
 	}
 
