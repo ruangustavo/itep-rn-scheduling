@@ -463,7 +463,7 @@ func (s *Scheduler) bookAppointment(slot TimeSlot) (BookingResponse, error) {
 
 	log.Printf("Booking response: %s", string(responseBody))
 
-	if resp.StatusCode != http.StatusOK {
+	if resp.StatusCode != http.StatusCreated {
 		return BookingResponse{}, fmt.Errorf("HTTP error %d: %s", resp.StatusCode, string(responseBody))
 	}
 
